@@ -1,7 +1,7 @@
 # Pet Grooming Appointment Booking Web Application
 
 ## Project Overview
-This project is a **Pet Grooming Appointment Booking Web Application** designed to streamline the process of scheduling grooming appointments for pets. The application features user and admin panels, allowing users to book appointments and manage their profiles, while admins can manage bookings, services, and users.
+This project involves building a pet grooming appointment booking web application allows users to schedule grooming appointments for their pets. Admins can manage bookings, users, services, and groomers through an intuitive, secure interface. The groomers can accept, reject or ask to reschedule the appointment requests. The application will be developed using the MERN stack (MongoDB, Express, React, Node.js) with both user-facing and admin panels.
 
 The project is developed using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js) and follows a mobile-friendly, responsive design approach.
 
@@ -13,31 +13,6 @@ The project is developed using the **MERN stack** (MongoDB, Express.js, React.js
 - **Role-Based Authorization**: Different access controls for users and admins.
 - **Mobile-Friendly Design**: Responsive design for mobile, tablet, and desktop views.
 
-## Functional Requirements
-- **Appointment Booking**: Users can select services and book appointments. Admins can manage appointment statuses (approve, reschedule, cancel).
-- **User Management**: Admins can manage (add, edit, delete) users. Users can update their profiles and pet information.
-- **Service Management**: Admins can add, edit, or delete grooming services with details such as name, price, and duration.
-- **Authorization & Authentication**: Users can register and log in, and admins have role-based access to manage data.
-
-## Non-Functional Requirements
-- **Scalability**: Supports a large number of users, appointments, and services without performance issues.
-- **Security**: Implements JWT-based authentication and uses HTTPS for secure communication.
-- **Performance**: Booking and service management execute in real-time with minimal latency.
-- **User Experience**: Intuitive interface accessible to both tech-savvy and non-technical users.
-
-## User Stories
-
-### Must Have
-1. As a user, I want to book a grooming service for my pet.
-2. As an admin, I want to manage appointments.
-
-### Should Have
-1. As a user, I want to rate my pet’s grooming service and provide feedback.
-2. As a user, I want to cancel or reschedule my grooming appointment.
-3. As a user, I want to save my favorite grooming services for future bookings.
-
-### Could Have
-1. As a user, I want to receive notifications for upcoming appointments via email or SMS.
 
 ## Technology Stack
 - **Backend**: Node.js and Express.js for handling requests and responses.
@@ -47,42 +22,49 @@ The project is developed using the **MERN stack** (MongoDB, Express.js, React.js
 - **Hosting**: AWS or Heroku for production deployment.
 - **Version Control**: Git for version control and project management.
 
-## Database Schema
+## Data Models
 
-### User Collection
-| Field Name  | Data Type  | Description                |
-|-------------|------------|----------------------------|
-| user_id     | INT (PK)   | Unique identifier for user  |
-| name        | VARCHAR(255)| Name of the user           |
-| email       | VARCHAR(255)| User’s email address       |
-| password    | VARCHAR(255)| Hashed password            |
-| role        | VARCHAR(255)| Role (admin/user)          |
-| created_at  | DATETIME   | Account creation date       |
+# User Model
+This table will store the details of each User.
 
-### Appointment Collection
-| Field Name       | Data Type   | Description                        |
-|------------------|-------------|------------------------------------|
-| appointment_id   | INT (PK)    | Unique identifier for the appointment |
-| user_id          | INT (FK)    | Reference to the user              |
-| service_id       | INT (FK)    | Reference to the grooming service  |
-| status           | VARCHAR(255)| Status (pending, confirmed, etc.)  |
-| appointment_date | DATETIME    | Date and time of the appointment   |
+| Field Name           | Data Type | Description                        |
+|----------------------|-----------|------------------------------------|
+| name                 | String    | Unique identifier for username    |
+| email                | String    | User’s email address              |
+| password             | String    | Hashed password                   |
+| isGroomer / isAdmin  | Boolean   | Verification                      |
+| phone                | String    | User’s phone number               |
+| city                 | String    | User’s city preference            |
 
-### Services Collection
-| Field Name | Data Type   | Description               |
-|------------|-------------|---------------------------|
-| service_id | INT (PK)    | Unique identifier for service |
-| name       | VARCHAR(255)| Name of the service        |
-| description| VARCHAR(255)| Description of the service |
-| price      | INT         | Cost of the service        |
+# Appointment Model
+This table will store the appointment details.
 
-## Timeline
-- **Weeks 1-2**: Project setup and initial research.
-- **Week 3**: Finalize requirements and wireframes.
-- **Week 4**: Wireframe approval and adjustments.
-- **Week 5**: Backend development including API and authentication.
-- **Week 6**: Frontend implementation and integration.
-- **Week 7**: Testing, deployment, and final quality assurance.
+| Field Name  | Data Type | Description                        |
+|-------------|-----------|------------------------------------|
+| groomer_id  | INT       | Unique identifier for the groomer |
+| user_id     | INT       | Reference to the user             |
+| services    | String    | Reference to the grooming service |
+| status      | String    | Status (pending, confirmed, etc.) |
+| date        | String    | Date of the appointment           |
+| time        | String    | Time of the appointment           |
+| pet_name    | String    | Name of pet                       |
+| pet_type    | String    | Type of pet                       |
+
+# Groomer Model
+This table will store the details of the services.
+
+| Field Name  | Data Type | Description                             |
+|-------------|-----------|-----------------------------------------|
+| firstName   | String    | First name of the groomer              |
+| lastName    | String    | Groomer’s last name                    |
+| about       | String    | Description of the service             |
+| basePrice   | Number    | Base cost of the service               |
+| phone       | String    | Phone number of the groomer            |
+| city        | String    | Groomer’s city preference              |
+| experience  | Number    | Number of years of grooming experience |
+| email       | String    | Email ID of the groomer                |
+
+
 
 ## Conclusion
 This web application will simplify the process of booking grooming appointments and managing services, benefiting both pet owners and grooming businesses. With its secure authentication and responsive design, it will offer an optimized experience for all users.
