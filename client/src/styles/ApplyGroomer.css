@@ -1,0 +1,101 @@
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://www.shutterstock.com/image-illustration/seamless-pattern-grooming-dogs-different-600nw-1549658516.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.apply-groomer-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-icon {
+  font-size: 48px;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+
+.form-header h1 {
+  color: #4a4a4a;
+  margin: 10px 0;
+}
+
+.form-header p {
+  color: #666;
+}
+
+.groomer-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-section h3 {
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section h3 svg {
+  color: #ff6b6b;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+/* Ant Design component customization */
+.ant-select-multiple .ant-select-selection-item {
+  background: #ffe5e5;
+  border-color: #ff6b6b;
+}
+
+.ant-checkbox-group-item {
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .groomer-form {
+    padding: 20px;
+  }
+  
+  .submit-button-container {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+} 

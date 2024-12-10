@@ -1,0 +1,58 @@
+.booking-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.groomer-info-card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.groomer-info-card h3 {
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.groomer-info-card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.appointment-details {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+.ant-btn-primary {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.ant-btn-primary:hover {
+  background: #ff5252;
+  border-color: #ff5252;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 10px;
+  }
+
+  .ant-card {
+    margin-bottom: 15px;
+  }
+
+  .ant-form-item {
+    margin-bottom: 15px;
+  }
+} 

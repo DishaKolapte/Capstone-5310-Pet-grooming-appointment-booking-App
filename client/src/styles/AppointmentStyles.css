@@ -1,0 +1,164 @@
+.appointments-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.appointments-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #4a4a4a;
+}
+
+.appointment-table {
+  overflow-x: auto;
+}
+
+.appointment-details-cell {
+  display: none;
+}
+
+.services-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.action-buttons button {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4a4a4a;
+}
+
+.modal-icon {
+  color: #ff6b6b;
+}
+
+.reschedule-form {
+  padding: 10px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .appointments-container {
+    padding: 10px;
+  }
+
+  .appointment-details-cell {
+    display: block;
+  }
+
+  .groomer-name {
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 4px;
+  }
+
+  .mobile-date-time {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 4px;
+  }
+
+  .pet-details {
+    color: #666;
+    font-size: 0.9em;
+  }
+
+  .services-tags {
+    margin-top: 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .ant-table {
+    font-size: 14px;
+  }
+
+  .ant-table-thead {
+    display: none;
+  }
+
+  .ant-table-row > td {
+    padding: 12px !important;
+  }
+
+  .reschedule-modal {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .ant-table-cell:last-child {
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .action-buttons button svg {
+    margin-right: 8px;
+  }
+} 
+
+.reschedule-modal .ant-modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reschedule-modal .ant-modal-footer button {
+  margin: 0 !important;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .reschedule-modal .ant-modal-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .reschedule-modal .ant-modal-footer button {
+    width: auto;
+  }
+} 
