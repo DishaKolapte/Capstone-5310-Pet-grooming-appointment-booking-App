@@ -31,6 +31,7 @@ const Login = () => {
           navigate("/groomer/profile");
         } else {
           navigate("/");
+          window.location.reload();
         }
       } else {
         message.error(res.data.message);
