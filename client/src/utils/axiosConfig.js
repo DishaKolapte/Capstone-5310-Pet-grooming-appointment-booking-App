@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const baseURL = process.env.REACT_APP_BACKEND_URL;
+
+const axiosInstance = axios.create({
+  baseURL: baseURL,
+});
+
 // Add a request interceptor
-axios.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   config => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -15,7 +21,7 @@ axios.interceptors.request.use(
 );
 
 // Add a response interceptor
-axios.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   response => response,
   error => {
     if (error.response?.status === 401) {
@@ -26,4 +32,4 @@ axios.interceptors.response.use(
   }
 );
 
-export default axios; 
+export default axiosInstance; 
