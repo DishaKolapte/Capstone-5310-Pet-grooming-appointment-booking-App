@@ -18,7 +18,9 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(moragan("dev"));
-app.use(cors());
+app.use(cors({
+  origin: 'https://capstone-5310-pet-grooming-appointment-fhtq.onrender.com'
+}));
 
 //routes
 //user routes
