@@ -16,7 +16,7 @@ const Appointments = () => {
 
   const getAppointments = async () => {
     try {
-      const res = await axios.get("/api/v1/user/appointments", {
+      const res = await axios.get("https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/appointments", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

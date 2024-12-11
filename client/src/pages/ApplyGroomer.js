@@ -42,7 +42,7 @@ const ApplyGroomer = () => {
     try {
       dispatch(showLoading());
       console.log('Sending data:', values);
-      const res = await axios.post("/api/v1/user/apply-groomer", values);
+      const res = await axios.post("https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/apply-groomer", values);
       dispatch(hideLoading());
       if (res.data.success) {
         message.success(res.data.message);

@@ -47,7 +47,7 @@ const HomePage = () => {
   // Fetch all approved groomers
   const getGroomers = async () => {
     try {
-      const res = await axios.get("/api/v1/user/getAllGroomers", {
+      const res = await axios.get("https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/getAllGroomers", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

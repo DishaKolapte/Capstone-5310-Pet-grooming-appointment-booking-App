@@ -24,7 +24,7 @@ const Groomers = () => {
         return;
       }
 
-      const res = await axios.get("/api/v1/admin/getAllGroomers", {
+      const res = await axios.get("https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/admin/getAllGroomers", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -46,7 +46,7 @@ const Groomers = () => {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const res = await axios.get("/api/v1/admin/groomer-stats", {
+      const res = await axios.get("https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/admin/groomer-stats", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
