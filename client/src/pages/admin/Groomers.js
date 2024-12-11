@@ -71,7 +71,7 @@ const Groomers = () => {
   const handleStatusChange = async (groomerId, status) => {
     try {
       const res = await axios.post(
-        "/api/v1/admin/changeGroomerStatus",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/admin/changeGroomerStatus",
         { groomerId, status },
         {
           headers: {

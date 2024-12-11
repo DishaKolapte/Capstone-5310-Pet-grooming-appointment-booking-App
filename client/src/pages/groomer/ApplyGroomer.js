@@ -18,7 +18,7 @@ const ApplyGroomer = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/apply-groomer",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/apply-groomer",
         {
           ...values,
           userId: user._id,

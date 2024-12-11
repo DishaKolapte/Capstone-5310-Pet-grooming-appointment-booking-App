@@ -31,7 +31,7 @@ const DoctorAppointments = () => {
   const handleStatus = async (record, status) => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/update-status",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/doctor/update-status",
         { appointmentsId: record._id, status },
         {
           headers: {

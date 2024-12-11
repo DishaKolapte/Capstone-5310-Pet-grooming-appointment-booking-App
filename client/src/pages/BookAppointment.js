@@ -47,7 +47,7 @@ const BookAppointment = () => {
   const handleSubmit = async (values) => {
     try {
       const res = await axios.post(
-        "/api/v1/user/book-appointment",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/book-appointment",
         {
           ...values,
           groomerId,

@@ -21,7 +21,7 @@ const Profile = () => {
       dispatch(showLoading());
       console.log('Sending update request with values:', values);
       const res = await axios.post(
-        "/api/v1/user/update-profile",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/update-profile",
         {
           ...values,
           userId: user._id,
@@ -56,7 +56,7 @@ const Profile = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/update-password",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/update-password",
         {
           userId: user._id,
           currentPassword: values.currentPassword,

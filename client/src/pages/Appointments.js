@@ -36,7 +36,7 @@ const Appointments = () => {
   const handleCancel = async (appointmentId) => {
     try {
       const res = await axios.post(
-        "/api/v1/user/cancel-appointment",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/cancel-appointment",
         { appointmentId },
         {
           headers: {
@@ -65,7 +65,7 @@ const Appointments = () => {
 
     try {
       const res = await axios.post(
-        "/api/v1/user/reschedule-appointment",
+        "https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/user/reschedule-appointment",
         {
           appointmentId: selectedAppointment._id,
           date: newDate.format("YYYY-MM-DD"),
