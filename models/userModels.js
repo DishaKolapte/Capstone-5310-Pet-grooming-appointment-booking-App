@@ -27,7 +27,13 @@ const userSchema = new mongoose.Schema({
   },
   city: {
     type: String,
-    required: [true, "city is required"],
+    required: false,
+    default: "",
+  },
+  address: {
+    type: String,
+    required: false,
+    default: "",
   },
   notification: {
     type: Array,
