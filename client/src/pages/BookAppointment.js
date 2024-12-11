@@ -30,7 +30,7 @@ const BookAppointment = () => {
 
   const getGroomerDetails = async () => {
     try {
-      const res = await axios.get(`/api/v1/groomer/getGroomerById/${groomerId}`, {
+      const res = await axios.get(`https://capstone-5310-pet-grooming-appointment.onrender.com/api/v1/groomer/getGroomerById/${groomerId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

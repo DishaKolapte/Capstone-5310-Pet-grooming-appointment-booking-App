@@ -24,9 +24,6 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(res.data.user));
         message.success(res.data.message);
         
-        // Refresh the page after successful login
-        window.location.reload();
-        
         // The following code will run after the page reloads
         if (res.data.user.isAdmin) {
           navigate("/admin/users");
