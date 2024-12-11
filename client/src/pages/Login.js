@@ -27,7 +27,6 @@ const Login = () => {
         dispatch(setUser(res.data.user));
         message.success(res.data.message);
         
-        window.location.reload();
         
         if (res.data.user.isAdmin) {
           navigate("/admin/users");

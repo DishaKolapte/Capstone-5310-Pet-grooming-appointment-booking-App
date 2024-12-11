@@ -16,7 +16,6 @@ export default function ProtectedRoute({ children }) {
     const shouldRefresh = sessionStorage.getItem('shouldRefresh');
     if (shouldRefresh === 'true') {
       sessionStorage.removeItem('shouldRefresh');
-      window.location.reload();
       return;
     }
   }, []);
