@@ -20,13 +20,14 @@ const Login = () => {
       dispatch(hideLoading());
 
       if (res.data.success) {
-        // Store token and user data
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
-        
         message.success(res.data.message);
         
-        // Redirect based on user role
+        // Refresh the page after successful login
+        window.location.reload();
+        
+        // The following code will run after the page reloads
         if (res.data.user.isAdmin) {
           navigate("/admin/users");
         } else if (res.data.user.isGroomer) {

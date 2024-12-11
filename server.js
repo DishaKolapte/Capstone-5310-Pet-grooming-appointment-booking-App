@@ -29,6 +29,15 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/api/v1/groomer", require("./routes/groomerRoutes"));
 
+// Important: Place this AFTER your API routes but BEFORE error handlers
+// Serve static files and handle client-side routing
+app.use(express.static(path.join(__dirname, './client/build')));
+
+// Handle all other routes by serving the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
+
 // Add this error handling middleware after your routes
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -46,17 +55,6 @@ app.use((req, res) => {
     message: "API endpoint not found"
   });
 });
-
-// Serve static files from the React app in production
-if (process.env.NODE_ENV === 'production') {
-    // Serve static files
-    app.use(express.static(path.join(__dirname, './client/build')));
-
-    // Handle React routing, return all requests to React app
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, './client/build/index.html'));
-    });
-}
 
 //port
 const PORT = process.env.PORT || 8080;
