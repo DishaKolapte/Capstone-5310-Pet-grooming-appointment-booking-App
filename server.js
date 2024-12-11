@@ -4,6 +4,7 @@ const moragan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
+const path = require('path');
 
 //dotenv conig
 dotenv.config();
@@ -43,6 +44,17 @@ app.use((req, res) => {
     message: "API endpoint not found"
   });
 });
+
+// Serve static files from the React app in production
+if (process.env.NODE_ENV === 'production') {
+    // Serve static files
+    app.use(express.static(path.join(__dirname, './client/build')));
+
+    // Handle React routing, return all requests to React app
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, './client/build/index.html'));
+    });
+}
 
 //port
 const PORT = process.env.PORT || 8080;
