@@ -77,11 +77,12 @@ const GroomerAppointments = () => {
     {
       title: "Date",
       dataIndex: "date",
-      render: (text) => moment(text).format("DD-MM-YYYY"),
+      render: (text) => moment(text).format("MMM DD, YYYY"),
     },
     {
       title: "Time",
       dataIndex: "time",
+      render: (text) => moment(text, "HH:mm").format("h:mm A"),
     },
     {
       title: "Pet Name",

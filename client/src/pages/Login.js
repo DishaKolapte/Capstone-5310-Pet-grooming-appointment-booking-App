@@ -8,6 +8,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import Footer from "../components/Footer";
+import { setUser } from "../redux/features/userSlice";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,18 +21,20 @@ const Login = () => {
       dispatch(hideLoading());
 
       if (res.data.success) {
+        localStorage.clear();
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
+        dispatch(setUser(res.data.user));
         message.success(res.data.message);
         
-        // The following code will run after the page reloads
+        window.location.reload();
+        
         if (res.data.user.isAdmin) {
           navigate("/admin/users");
         } else if (res.data.user.isGroomer) {
           navigate("/groomer/profile");
         } else {
           navigate("/");
-          window.location.reload();
         }
       } else {
         message.error(res.data.message);
